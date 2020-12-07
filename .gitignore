@@ -11,6 +11,9 @@
 # production
 /build
 
+# slint
+.eslintrc.js
+
 # misc
 .DS_Store
 .env.local
