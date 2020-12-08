@@ -1,4 +1,6 @@
 import React from 'react' ;
+import moment from 'moment' ;
+import 'moment/locale/es' ;
 
 const Hotel = ( { hotel } ) => (
     <div className="card">
@@ -9,6 +11,7 @@ const Hotel = ( { hotel } ) => (
         </div>
         <div className="card-content">
             <p className="title is-4">{ hotel.name }</p>
+            <p>{ `Desde ${moment( hotel.availabilityFrom ).format( 'DD-MM-YYYY' )} hasta el ${moment( hotel.availabilityTo ).format( 'DD-MM-YYYY' )}` }</p>
             <p>{ hotel.description }</p>
             <div className="field is-grouped is-grouped-multiline" style={ { marginTop: '1em' } }>
                 <div className="control">
@@ -40,7 +43,7 @@ const Hotel = ( { hotel } ) => (
             </div>
         </div>
         <div className="card-footer">
-            <a href="javascript:alert('No implementamos esto aún :(')" className="card-footer-item has-background-primary has-text-white has-text-weight-bold">Reservar</a>
+            <button onClick={ () => alert( 'No implementamos esto aún :(' ) } className="button card-footer-item has-background-primary has-text-white has-text-weight-bold">Reservar</button>
         </div>
     </div>
 ) ;

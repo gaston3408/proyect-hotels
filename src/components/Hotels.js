@@ -9,15 +9,13 @@ const Hotels = ( { hotels } ) => (
                     No se han encontrado hoteles que coincidan con los parámetros de búsqueda.
                 </div>
             </article>
-
         ) : (
             <section className="section" style={ { marginTop: '3em' } }>
-                { console.log( hotels ) }
                 <div className="container">
                     <div className="columns is-multiline">
                         { hotels.map( ( hotel ) => (
 
-                            <div className="column is-one-third">
+                            <div key={ hotel.name } className="column is-one-third">
                                 <Hotel hotel={ hotel } />
                             </div>
 
