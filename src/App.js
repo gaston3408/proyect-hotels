@@ -28,7 +28,7 @@ const App = () => {
         }
         setFilters( {
             ...filters,
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value === 'Todos los países' || e.target.value === 'Cualquier tamaño' || e.target.value === 'Cualquier precio' ? undefined : e.target.value,
         } ) ;
     } ;
 
